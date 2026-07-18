@@ -1,0 +1,1001 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discord Timestamp Generator: Create Dynamic Timestamps Instantly</title>
+  <meta name="description" content="Free Discord Timestamp Generator. Pick a date, time and format to instantly create dynamic, timezone-aware Discord timestamps. Copy with one click, no sign-up." />
+  <meta name="keywords" content="Discord Timestamp Generator, Discord timestamp, dynamic timestamp Discord, unix timestamp Discord, Discord time format" />
+  <meta name="author" content="Discord Timestamp Generator" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dctimestampgen.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Discord Timestamp Generator" />
+  <meta property="og:title" content="Discord Timestamp Generator: Create Dynamic Timestamps Instantly" />
+  <meta property="og:description" content="Pick a date, time and format to instantly create dynamic Discord timestamps like &lt;t:1734567890:R&gt;. Free, timezone-aware and copy-ready. No sign-up." />
+  <meta property="og:url" content="https://dctimestampgen.com/" />
+  <meta property="og:image" content="https://dctimestampgen.com/assets/images/discord-timestamp-generator.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+  <meta property="og:image:type" content="image/png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Discord Timestamp Generator: Create Dynamic Timestamps Instantly" />
+  <meta name="twitter:description" content="Create dynamic Discord timestamps like &lt;t:1734567890:R&gt; in seconds. Free, timezone-aware and copy-ready." />
+  <meta name="twitter:image" content="https://dctimestampgen.com/assets/images/discord-timestamp-generator.png" />
+
+  <meta name="theme-color" content="#5865f2" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Schema.org: Organization + WebSite + WebApplication + BreadcrumbList + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dctimestampgen.com/#organization",
+        "name": "Discord Timestamp Generator",
+        "url": "https://dctimestampgen.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dctimestampgen.com/assets/images/discord-timestamp-generator.png",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dctimestampgen.com/#website",
+        "name": "Discord Timestamp Generator",
+        "url": "https://dctimestampgen.com/",
+        "description": "Free tool to create dynamic, timezone-aware Discord timestamps from any date and time.",
+        "publisher": { "@id": "https://dctimestampgen.com/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Discord Timestamp Generator",
+        "url": "https://dctimestampgen.com/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "browserRequirements": "Requires JavaScript",
+        "description": "A free online tool that generates dynamic Discord timestamps from any date, time and format.",
+        "isPartOf": { "@id": "https://dctimestampgen.com/#website" },
+        "publisher": { "@id": "https://dctimestampgen.com/#organization" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dctimestampgen.com/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How to create a timestamp in Discord?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pick a date and time in the Discord Timestamp Generator, then copy the code it makes. Paste that code into any message and Discord turns it into a readable time when you send it. There is nothing to install and no account needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to add a timestamp in a Discord message?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste the generated code, such as <t:1734567890:R>, straight into the message box like normal text. When you hit send, Discord swaps it for a formatted date. It works in channels, threads, embeds, and direct messages."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to display local time in Discord?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You do not have to do anything special. A Discord timestamp always shows in each reader's own local time. You pick the moment once, and Discord handles the conversion for every person who sees the message."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to convert time in Discord?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the Discord time converter. Enter your date and time, and it works out the Unix number behind the scenes. That number is what lets Discord show the same instant correctly in every timezone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What time format does Discord use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Discord uses the syntax <t:UNIX:STYLE>, where the Unix value is seconds since January 1, 1970 and the style is one letter. The seven styles are t, T, d, D, f, F, and R."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to display \"X minutes ago\" in Discord?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the relative style by ending the code with R, like <t:1734567890:R>. Discord shows phrases like 'in 5 minutes' or '10 minutes ago' and keeps them updating on their own."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to write discord timestamp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Write an opening <t:, then the Unix number in seconds, then a colon and a style letter, then a closing >. So a full code looks like <t:1734567890:F>. The tool builds this for you if you would rather not type it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the date format for Discord?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For dates you can use d for a short numeric date like 12/18/2024, or D for a written date like December 18, 2024. Discord shows the order in each reader's regional style, so you never have to guess day-first or month-first."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the format of a timestamp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A timestamp is built from a Unix value, which is a plain count of seconds since January 1, 1970. On Discord that value gets wrapped in the <t:UNIX:STYLE> syntax so it can be shown as a date, a time, or a countdown."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to write local time in Discord?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enter your local time in the generator and copy the code. You do not write out the timezone at all. Discord reads the Unix value and shows your chosen moment in each viewer's own local time automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to do time conversion on Discord?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The conversion happens for you. You give the tool one date and time, it turns that into a Unix number, and Discord converts that number into the correct local time for every reader when the message loads."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to make a Discord timestamp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open the generator, choose your date, time, and a format, then copy the finished code and paste it into Discord. The whole thing takes about ten seconds and needs no coding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you change the time on Discord?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You cannot change another person's clock, and you do not need to. To point a timestamp at a new moment, edit the message and change the Unix number in the code. Discord updates the displayed time right away for everyone."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="/" aria-label="Discord Timestamp Generator home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
+          </span>
+          <span>Timestamp<span style="color:var(--blurple)">Gen</span></span>
+        </a>
+
+        <ul class="nav__menu" id="primary-menu" data-nav-menu>
+          <li><a class="nav__link" href="/" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="blog.html">Blog</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+          <li><a class="nav__link" href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a class="nav__link" href="terms-and-conditions.html">Terms</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <a class="btn btn--primary nav__cta" href="#tool">Open the Tool</a>
+          <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation menu">
+            <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================ HERO ============================ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <span class="eyebrow">Free &middot; No sign-up &middot; Timezone-aware</span>
+          <h1>Discord <span class="gradient-text">Timestamp Generator</span></h1>
+          <p class="hero__lead">
+            Turn any date and time into a dynamic Discord timestamp in seconds.
+            Pick a format, click generate, and copy a ready-to-paste code like
+            <strong>&lt;t:1734567890:R&gt;</strong> that shows the right local time for every
+            member of your server.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#tool">Generate a Timestamp</a>
+            <a class="btn btn--ghost btn--lg" href="#formats">View Formats</a>
+          </div>
+          <div class="hero__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Works in every timezone</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Runs 100% in your browser</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> One-click copy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TOOL ============================ -->
+    <section class="section section--tight tool" id="tool" aria-labelledby="tool-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="tool-title">Discord Timestamp Generator</h2>
+          <p>Pick a date, time and timezone, then generate every Discord timestamp format at once. Copy any single format, or grab them all.</p>
+        </div>
+
+        <div class="tool__card">
+          <!-- Settings -->
+          <form id="generator-form" class="tool__settings" novalidate>
+            <div class="tool__settings-head">
+              <p class="tool__panel-title">Settings</p>
+              <div class="tool__quick">
+                <button type="button" class="chip-btn" id="btn-now" title="Set the date and time to right now">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
+                  Use current time
+                </button>
+                <button type="button" class="chip-btn" id="btn-unix-now" title="Insert the current Unix timestamp">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="12 8 12 12 14 14"></polyline><path d="M3 12a9 9 0 1 0 9-9"></path><polyline points="3 4 3 8 7 8"></polyline></svg>
+                  Current Unix
+                </button>
+                <button type="button" class="chip-btn" id="btn-clear" title="Clear all fields">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  Clear
+                </button>
+              </div>
+            </div>
+
+            <div class="tool__fields">
+              <div class="field">
+                <label class="field__label" for="gen-date">Date</label>
+                <input class="input" type="date" id="gen-date" name="date" required aria-describedby="gen-date-error" />
+                <p class="field-error" id="gen-date-error" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="gen-time">Time</label>
+                <input class="input" type="time" id="gen-time" name="time" step="1" required aria-describedby="gen-time-error" />
+                <p class="field-error" id="gen-time-error" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="gen-timezone">Timezone</label>
+                <select class="select" id="gen-timezone" name="timezone" aria-describedby="gen-timezone-hint"></select>
+                <p class="field__hint" id="gen-timezone-hint">Defaults to your local timezone. Daylight saving is handled automatically.</p>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="gen-unix">Unix timestamp <span class="field__opt">(optional)</span></label>
+                <input class="input" type="text" id="gen-unix" name="unix" inputmode="numeric" autocomplete="off" placeholder="e.g. 1734567890" aria-describedby="gen-unix-error gen-unix-hint" />
+                <p class="field-error" id="gen-unix-error" role="alert" aria-live="polite"></p>
+                <p class="field__hint" id="gen-unix-hint">Type a Unix value to fill the date and time above.</p>
+              </div>
+            </div>
+
+            <div class="tool__actions">
+              <button class="btn btn--primary btn--lg btn--block" type="submit" id="generate-btn">
+                <span class="btn__spinner" aria-hidden="true"></span>
+                <span class="btn__label">
+                  <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  Generate all formats
+                </span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Results -->
+          <div class="tool__results" id="results">
+            <div class="results-empty" id="results-empty">
+              <div class="results-empty__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </div>
+              <p>Your generated timestamps will appear here.</p>
+              <span>Fill in the fields and press <kbd>Enter</kbd> or <strong>Generate</strong>.</span>
+            </div>
+
+            <div class="results-body" id="results-body" hidden>
+              <div class="unix-row">
+                <div class="unix-row__info">
+                  <p class="results-label">Generated Unix timestamp</p>
+                  <code class="unix-value" id="unix-value">0</code>
+                </div>
+                <button class="btn btn--secondary btn--sm copy-btn" type="button" id="copy-unix-btn" data-label="Copy" aria-label="Copy Unix timestamp">
+                  <span class="copy-btn__text">Copy</span>
+                </button>
+              </div>
+
+              <div class="table-wrap">
+                <table class="results-table">
+                  <caption class="visually-hidden">All Discord timestamp formats for the selected date and time</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Format</th>
+                      <th scope="col">Discord syntax</th>
+                      <th scope="col">Live preview</th>
+                      <th scope="col"><span class="visually-hidden">Copy</span></th>
+                    </tr>
+                  </thead>
+                  <tbody id="results-tbody"><!-- rows injected by JS --></tbody>
+                </table>
+              </div>
+
+              <div class="results-actions">
+                <button class="btn btn--primary copy-all-btn" type="button" id="copy-all-btn" data-label="Copy all formats">
+                  <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span class="copy-btn__text">Copy all formats</span>
+                </button>
+                <button class="btn btn--secondary" type="button" id="reset-btn">
+                  <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TL;DR ============================ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="callout callout--tldr">
+          <h2>TL;DR</h2>
+          <ul>
+            <li>A Discord timestamp is a short code like <code>&lt;t:1734567890:R&gt;</code> that Discord turns into a clean, readable date.</li>
+            <li>It shows the correct local time for every person who reads it, so nobody has to do timezone math.</li>
+            <li>The Discord Timestamp Generator does the hard part for you. Pick a date, pick a format, copy the code.</li>
+            <li>Seven formats cover everything from a bare clock time to a live countdown that ticks on its own.</li>
+            <li>It is free, needs no account, and runs right in your browser.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section" aria-labelledby="about-tool-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="about-tool-title">About Discord Time Converter</h2>
+
+          <figure class="about-figure">
+            <img src="assets/images/discord-timestamp-generator.png" width="1200" height="675" loading="lazy" alt="Discord Timestamp Generator turning a date and time into a dynamic timestamp" />
+          </figure>
+
+          <p>
+            If you have ever posted an event time in a Discord server, you already know the pain. You type "raid starts
+            at 8 PM," hit send, and the questions start rolling in. Eight PM where? Your time or mine? A Discord
+            timestamp fixes that in one shot. It is a small piece of text that Discord reads and turns into a real date
+            or time, shaped to fit each person who sees it.
+          </p>
+          <p>
+            Here is the part that makes it click. Every timestamp is built on a Unix number, which is just a count of
+            seconds since January 1, 1970. That number has no timezone attached to it, so Discord can take the same code
+            and show it as 8 PM to a member in New York, 1 AM to someone in London, and 9 AM to a friend in Tokyo. Same
+            moment, three clocks, zero confusion. This is what people mean when they talk about a Discord time converter.
+            The code carries the moment, and each app does the local math.
+          </p>
+          <p>
+            So why do Discord users need this? Because communities are global now. Your gaming squad, your study group,
+            your work server, they rarely sit in one timezone. Posting a fixed time forces everyone else to convert it
+            in their head, and people get it wrong. They show up an hour early, or they miss the event completely. That
+            is where a Discord timestamp converter earns its keep. It turns a messy list of "5 PM PST / 8 PM EST / 1 AM
+            GMT" into one tidy line that just works.
+          </p>
+          <p>
+            Our tool handles the whole conversion for you. You enter the date and time in your own zone, and the
+            generator works out the exact Unix value behind the scenes, daylight saving included. You never touch a
+            calculator, and you never guess. That is the difference between fighting with time and letting the tool
+            carry it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ HOW TO USE ============================ -->
+    <section class="section" aria-labelledby="howto-title">
+      <div class="container">
+        <div class="benefits">
+          <div>
+            <span class="eyebrow">How to Use</span>
+            <h2 id="howto-title">How to Use</h2>
+            <p>
+              I built this to be a copy-and-paste job, nothing more. You do not need a bot, a plugin,
+              or any coding know-how. If you can pick a date on a calendar, you can make a Discord
+              timestamp in about ten seconds flat. Here is the whole routine.
+            </p>
+            <ul class="benefit-list">
+              <li>
+                <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                <span><strong>Pick your date and time</strong>Use the fields in the tool above. It already knows your local timezone.</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                <span><strong>Hit generate</strong>The tool spits out all seven formats at once, with a live preview of each.</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                <span><strong>Copy the one you want</strong>One click drops the code on your clipboard. Grab a single format or all of them.</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                <span><strong>Paste it into Discord</strong>Send the message and Discord turns the code into a clean, local time for everyone.</span>
+              </li>
+            </ul>
+            <p style="margin-top:24px">
+              That is really it. The first time I used a
+              <a href="#tool">Discord timestamp generator</a> I kept waiting for a catch, but there
+              is not one. Pick, generate, copy, paste. You will have it memorized after a couple of tries.
+            </p>
+          </div>
+
+          <div class="panel">
+            <p class="tool__panel-title">Before &amp; after</p>
+            <p class="output__preview-label">Static message</p>
+            <div class="discord-message">
+              <div class="discord-message__avatar" aria-hidden="true">A</div>
+              <div class="discord-message__body">
+                <div class="discord-message__meta">
+                  <span class="discord-message__name">Announcements</span>
+                  <span class="discord-message__time">Today</span>
+                </div>
+                <p class="discord-message__text">Community night is at 8 PM EST</p>
+              </div>
+            </div>
+            <p class="output__preview-label" style="margin-top:20px">With a dynamic timestamp</p>
+            <div class="discord-message">
+              <div class="discord-message__avatar" aria-hidden="true">A</div>
+              <div class="discord-message__body">
+                <div class="discord-message__meta">
+                  <span class="discord-message__name">Announcements</span>
+                  <span class="discord-message__time">Today</span>
+                </div>
+                <p class="discord-message__text">Community night is <span class="discord-chip">in 3 hours</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FORMATS ============================ -->
+    <section class="section section--subtle" id="formats" aria-labelledby="formats-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Reference</span>
+          <h2 id="formats-title">Timestamp Formats</h2>
+          <p>Every timestamp uses the syntax <code style="font-family:var(--font-mono)">&lt;t:UNIX:STYLE&gt;</code>. The last letter is the only thing that changes. Here is what each one shows, when I reach for it, and what your readers actually see.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg></div>
+            <h3>Short Date (d)</h3>
+            <p><strong>Shows:</strong> a compact numeric date.</p>
+            <p><strong>Use it when:</strong> you need a quick deadline or due date and the time of day does not matter.</p>
+            <p style="margin-top:10px"><code>&lt;t:1734567890:d&gt;</code> &rarr; <span class="discord-chip">12/18/2024</span></p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+            <h3>Long Date (D)</h3>
+            <p><strong>Shows:</strong> a written-out date with the month spelled in full.</p>
+            <p><strong>Use it when:</strong> a date needs to stick, like a launch day or an anniversary.</p>
+            <p style="margin-top:10px"><code>&lt;t:1734567890:D&gt;</code> &rarr; <span class="discord-chip">December 18, 2024</span></p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+            <h3>Short Time (t)</h3>
+            <p><strong>Shows:</strong> a plain clock time, no date.</p>
+            <p><strong>Use it when:</strong> everyone already knows the day and you just need the hour.</p>
+            <p style="margin-top:10px"><code>&lt;t:1734567890:t&gt;</code> &rarr; <span class="discord-chip">4:20 PM</span></p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline><line x1="12" y1="2" x2="12" y2="4"></line></svg></div>
+            <h3>Long Time (T)</h3>
+            <p><strong>Shows:</strong> the time down to the second.</p>
+            <p><strong>Use it when:</strong> seconds truly matter, like a precise drop or countdown moment.</p>
+            <p style="margin-top:10px"><code>&lt;t:1734567890:T&gt;</code> &rarr; <span class="discord-chip">4:20:30 PM</span></p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+            <h3>Short Date/Time (f)</h3>
+            <p><strong>Shows:</strong> a written date plus the time. This is the default if you skip the letter.</p>
+            <p><strong>Use it when:</strong> you want a solid all-rounder for everyday posts.</p>
+            <p style="margin-top:10px"><code>&lt;t:1734567890:f&gt;</code> &rarr; <span class="discord-chip">December 18, 2024 4:20 PM</span></p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"></path><path d="M4 9h16"></path><path d="M9 4v16"></path></svg></div>
+            <h3>Long Date/Time (F)</h3>
+            <p><strong>Shows:</strong> the full picture, weekday included.</p>
+            <p><strong>Use it when:</strong> the event is a big deal and you want zero chance of a wrong-day mix-up.</p>
+            <p style="margin-top:10px"><code>&lt;t:1734567890:F&gt;</code> &rarr; <span class="discord-chip">Wednesday, December 18, 2024 4:20 PM</span></p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 8 12 12 14 14"></polyline><path d="M3 12a9 9 0 1 0 9-9"></path><polyline points="3 4 3 8 7 8"></polyline></svg></div>
+            <h3>Relative Time (R)</h3>
+            <p><strong>Shows:</strong> a live phrase that keeps updating on its own.</p>
+            <p><strong>Use it when:</strong> you want a countdown for a giveaway, stream, or launch.</p>
+            <p style="margin-top:10px"><code>&lt;t:1734567890:R&gt;</code> &rarr; <span class="discord-chip">in 3 days</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ HOW TO USE DISCORD TIMESTAMPS (STEPS) ============================ -->
+    <section class="section" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Step by step</span>
+          <h2 id="steps-title">How to Use Discord Timestamps</h2>
+          <p>Four small steps take you from a date in your head to a clean time that reads right for your whole server.</p>
+        </div>
+
+        <div class="grid grid--2 steps-grid">
+          <article class="card step-card">
+            <span class="step-card__num" aria-hidden="true">1</span>
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+            <h3>Step 1: Generate a Timestamp</h3>
+            <p>Pick your date and time in the tool near the top of this page. It reads your local timezone on its own and sorts out daylight saving, so you do not have to think about the math.</p>
+          </article>
+          <article class="card step-card">
+            <span class="step-card__num" aria-hidden="true">2</span>
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></div>
+            <h3>Step 2: Copy the Timestamp Code</h3>
+            <p>Click copy next to any format and the code lands on your clipboard. You can grab a single style or copy all seven at once if you want to keep your options open.</p>
+          </article>
+          <article class="card step-card">
+            <span class="step-card__num" aria-hidden="true">3</span>
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7"></path><path d="M4 10V3"></path><path d="M12 21v-9"></path><path d="M12 8V3"></path><path d="M20 21v-5"></path><path d="M20 12V3"></path><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></div>
+            <h3>Step 3: Choose a Display Format (Optional)</h3>
+            <p>Want a countdown instead of a plain date? Swap the last letter of the code, or just copy the relative style. This step is optional since the default format already looks great.</p>
+          </article>
+          <article class="card step-card">
+            <span class="step-card__num" aria-hidden="true">4</span>
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></div>
+            <h3>Step 4: Paste into Discord</h3>
+            <p>Drop the code into any message, embed, or event description and hit send. Discord swaps it for a live local time the moment the message posts. No bot, no plugin, nothing extra.</p>
+          </article>
+        </div>
+
+        <p class="text-center" style="margin-top:32px">
+          <a class="btn btn--primary btn--lg" href="#tool">Open the Discord timestamp tool</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ KEY USE CASES ============================ -->
+    <section class="section section--subtle" aria-labelledby="usecases-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Use cases</span>
+          <h2 id="usecases-title">Key Use Cases for Discord Timestamps</h2>
+          <p>These are the spots where a timestamp saves you the most grief. I lean on all three every week.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+            <h3>Cross-Timezone Event Planning</h3>
+            <p>When your members are scattered across countries, one timestamp shows each of them their own local start time. No more posting a list of five zones and hoping people read the right one.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></div>
+            <h3>Event Reminder Setup</h3>
+            <p>Drop a relative timestamp into an announcement and it becomes a living reminder. People see "in 2 hours" tick down to "in 10 minutes" without you editing a thing.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+            <h3>Historical Record Tracking</h3>
+            <p>Logging when something happened? A fixed date-time timestamp keeps the record clear for everyone who reads it later, in their own timezone, long after the moment has passed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ WHY CHOOSE ============================ -->
+    <section class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why us</span>
+          <h2 id="why-title">Why Choose Our Discord Timestamp Generator?</h2>
+          <p>There are a few tools out there. Here is what keeps people coming back to this one.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+            <h3>Simplicity and Speed</h3>
+            <p>No sign-up, no clutter, no learning curve. You land on the page, pick a time, and copy your code in seconds. The whole thing is built to get out of your way.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+            <h3>Accuracy Across Timezones</h3>
+            <p>The Discord time converter does the timezone and daylight saving math for you, so the moment you pick is the moment everyone sees. Off-by-an-hour mistakes just stop happening.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></div>
+            <h3>Versatile Formatting Options</h3>
+            <p>All seven Discord styles are generated at once, from a bare clock time to a full weekday date to a live countdown. Pick whichever fits the message and move on.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ HISTORICAL CONTEXT ============================ -->
+    <section class="section section--subtle" aria-labelledby="history-title">
+      <div class="container">
+        <div class="prose">
+          <span class="eyebrow">Background</span>
+          <h2 id="history-title">Historical Context</h2>
+          <p>
+            For years, coordinating time on Discord meant typing something like "raid at 8 PM EST" and crossing your
+            fingers. People in other regions had to open a separate converter, do the sums, and hope they got it right.
+            Plenty did not. If you ran a server with members in a handful of countries, you got used to the same reply
+            over and over: "wait, what time is that for me?"
+          </p>
+          <p>
+            Discord added native timestamps to fix exactly this. The idea is simple but clever. Instead of storing a
+            time that only means something in one place, you store a Unix number, which is just a count of seconds since
+            January 1, 1970. That number points to the same instant everywhere on earth. Discord then paints it in each
+            reader's own timezone and language when the message loads.
+          </p>
+          <p>
+            This is why dynamic timestamps beat writing dates by hand, and it is not a close call. A typed-out time is
+            frozen the second you post it. It cannot adjust, it cannot count down, and it quietly assumes everyone shares
+            your clock. A dynamic timestamp does the opposite. It adapts to every viewer, it updates itself when you use
+            the relative style, and it never drifts out of date. Once you have felt the difference, going back to plain
+            text feels like a step backward. That shift, from static text to a smart Discord time conversion, is the
+            whole reason this tool exists.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ APPLICATION SCENARIOS ============================ -->
+    <section class="section" aria-labelledby="scenarios-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">In the wild</span>
+          <h2 id="scenarios-title">Application Scenarios</h2>
+          <p>A few real ways people put Discord timestamps to work day to day.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"></line><line x1="8" y1="9" x2="8" y2="13"></line><line x1="15" y1="12" x2="15.01" y2="12"></line><line x1="18" y1="10" x2="18.01" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path></svg></div>
+            <h3>Scheduling Gaming Sessions</h3>
+            <p>Raids, ranked nights, and scrims all live or die on timing. A timestamp lets your squad see the exact start in their own clock, so nobody loads in an hour late while the rest of the team waits.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <h3>Moderating Chat Rooms</h3>
+            <p>Mods use timestamps for maintenance windows, slow-mode notices, and scheduled events. One clear time cuts down on the "when is this happening" questions that flood a busy channel.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg></div>
+            <h3>Creating Dynamic Bot Responses</h3>
+            <p>Bot developers wrap a Unix number in the timestamp syntax so replies show live times. A reminder bot can say an event starts "in 30 minutes" and have it stay accurate without any extra code.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></div>
+            <h3>Announcing Content Releases</h3>
+            <p>Streamers and creators post a countdown to a premiere or drop. The relative style builds hype on its own, ticking down in every follower's timezone right up to go time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TESTIMONIALS ============================ -->
+    <section class="section section--subtle" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Reviews</span>
+          <h2 id="reviews-title">What Our Users Say</h2>
+          <p>Notes from server owners, mods, and everyday Discord users who made the switch.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <figure class="card testimonial">
+            <div class="testimonial__stars" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+            </div>
+            <blockquote><p>"I run a server with people from four continents. This ended the endless 'what time is that for me' replies overnight. I honestly wish I'd found it a year earlier."</p></blockquote>
+            <figcaption class="testimonial__by">Community server owner</figcaption>
+          </figure>
+          <figure class="card testimonial">
+            <div class="testimonial__stars" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+            </div>
+            <blockquote><p>"As a mod, the countdown format is my favorite. I post it once for an event and it just handles itself. My members actually show up on time now."</p></blockquote>
+            <figcaption class="testimonial__by">Discord moderator</figcaption>
+          </figure>
+          <figure class="card testimonial">
+            <div class="testimonial__stars" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"></polygon></svg>
+            </div>
+            <blockquote><p>"I'm not techy at all, and I still had my first timestamp working in under a minute. Copy, paste, done. It does one job and it does it really well."</p></blockquote>
+            <figcaption class="testimonial__by">Everyday Discord user</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FAQ ============================ -->
+    <section class="section section--subtle" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <p>Quick answers to the most common questions about Discord timestamps.</p>
+        </div>
+
+        <div class="faq" data-faq>
+          <details class="faq-item">
+            <summary>How to create a timestamp in Discord?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Pick a date and time in the tool at the top of this page, then copy the code it makes. Paste that code into any message and Discord turns it into a readable time when you send it. There is nothing to install and no account needed.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to add a timestamp in a Discord message?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Paste the generated code, such as <code style="font-family:var(--font-mono)">&lt;t:1734567890:R&gt;</code>, straight into the message box like normal text. When you hit send, Discord swaps it for a formatted date. It works in channels, threads, embeds, and direct messages.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to display local time in Discord?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>You do not have to do anything special. A Discord timestamp always shows in each reader's own local time. You pick the moment once, and Discord handles the conversion for every person who sees the message.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to convert time in Discord?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Use the Discord time converter above. Enter your date and time, and it works out the Unix number behind the scenes. That number is what lets Discord show the same instant correctly in every timezone.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What time format does Discord use?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Discord uses the syntax <code style="font-family:var(--font-mono)">&lt;t:UNIX:STYLE&gt;</code>, where the Unix value is seconds since January 1, 1970 and the style is one letter. The seven styles are <code>t</code>, <code>T</code>, <code>d</code>, <code>D</code>, <code>f</code>, <code>F</code>, and <code>R</code>.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to display "X minutes ago" in Discord?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Use the relative style by ending the code with <code>R</code>, like <code style="font-family:var(--font-mono)">&lt;t:1734567890:R&gt;</code>. Discord shows phrases like "in 5 minutes" or "10 minutes ago" and keeps them updating on their own.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to write discord timestamp?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Write an opening <code>&lt;t:</code>, then the Unix number in seconds, then a colon and a style letter, then a closing <code>&gt;</code>. So a full code looks like <code style="font-family:var(--font-mono)">&lt;t:1734567890:F&gt;</code>. The tool builds this for you if you would rather not type it.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is the date format for Discord?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>For dates you can use <code>d</code> for a short numeric date like 12/18/2024, or <code>D</code> for a written date like December 18, 2024. Discord shows the order in each reader's regional style, so you never have to guess day-first or month-first.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is the format of a timestamp?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>A timestamp is built from a Unix value, which is a plain count of seconds since January 1, 1970. On Discord that value gets wrapped in the <code style="font-family:var(--font-mono)">&lt;t:UNIX:STYLE&gt;</code> syntax so it can be shown as a date, a time, or a countdown.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to write local time in Discord?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Enter the time in your own timezone in the tool, then paste the code it gives you. Every reader still sees it in their local time. You never write out a specific zone, which is what keeps the message clear for everyone.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to do time conversion on Discord?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Let the tool handle it. Discord time conversion happens through the Unix number, and the generator calculates that from the date and time you pick. Daylight saving is handled too, so the result stays accurate.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to make a Discord timestamp?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>Two ways. The quick way is the generator on this page: pick, generate, copy, paste. The manual way is to find your Unix number and wrap it in the timestamp syntax yourself. For everyday posting, the tool is faster and safer.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can you change the time on Discord?
+              <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </summary>
+            <div class="faq-body"><p>You cannot change another person's clock, and you do not need to. To point a timestamp at a new moment, edit the message and change the Unix number in the code. Discord updates the displayed time right away for everyone.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ RECOMMENDED BLOG POSTS ============================ -->
+    <section class="section" aria-labelledby="posts-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">From the blog</span>
+          <h2 id="posts-title">Recommended Blog Posts</h2>
+          <p>Want to go deeper? These guides cover the formats, the how-to, and the trade-offs in plain language.</p>
+        </div>
+
+        <div class="grid grid--4 post-grid">
+          <a class="card post-card" href="blog/how-to-use-discord-timestamps.html">
+            <div class="post-card__media">
+              <img src="assets/images/How-to-use-Discord-timestamps.png" alt="How to use Discord timestamps guide" loading="lazy" width="1200" height="675" />
+            </div>
+            <h3>How To Use Discord Timestamps</h3>
+            <p>The complete beginner guide, from your first code to picking the right style every time.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+
+          <a class="card post-card" href="blog/discord-timestamp-formats.html">
+            <div class="post-card__media">
+              <img src="assets/images/discord-timestamp-formats.png" alt="Discord timestamp formats explained" loading="lazy" width="1200" height="675" />
+            </div>
+            <h3>Discord Timestamp Formats</h3>
+            <p>All seven formats explained with examples, best uses, and the mistakes to dodge.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+
+          <a class="card post-card" href="blog/discord-timestamp-generator-vs-manual.html">
+            <div class="post-card__media">
+              <img src="assets/images/generator-vs-manual.png" alt="Discord timestamp generator versus manual formatting" loading="lazy" width="1200" height="675" />
+            </div>
+            <h3>Discord Timestamp Generator vs Manual Methods</h3>
+            <p>Which way wins? A practical head-to-head with pros, cons, and real examples.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+
+          <a class="card post-card" href="blog/using-discord-timestamps.html">
+            <div class="post-card__media">
+              <img src="assets/images/using-discord-timestamp.png" alt="Using Discord timestamps walkthrough" loading="lazy" width="1200" height="675" />
+            </div>
+            <h3>Using Discord Timestamps</h3>
+            <p>A friendly walkthrough with real examples you can copy and adapt in seconds.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CTA ============================ -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Create your first Discord timestamp now</h2>
+          <p>It is free, private and takes less than ten seconds. Pick a date, choose a format and copy the code.</p>
+          <a class="btn btn--primary btn--lg" href="#tool">Open the Generator</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="/" aria-label="Discord Timestamp Generator home">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
+            </span>
+            <span style="color:#fff">TimestampGen</span>
+          </a>
+          <p>The fast, free and private way to create dynamic Discord timestamps for your community.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Product">
+          <h3 class="footer__col-title">Product</h3>
+          <ul>
+            <li><a href="/#tool">Generator</a></li>
+            <li><a href="/#formats">Formats</a></li>
+            <li><a href="/#faq-title">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Company">
+          <h3 class="footer__col-title">Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Legal">
+          <h3 class="footer__col-title">Legal</h3>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span data-year>2026</span> Discord Timestamp Generator. All rights reserved.</p>
+        <p>Not affiliated with or endorsed by Discord Inc.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toast-message">Copied!</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/timestamp-generator.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO METADATA ===== -->
+  <title>Discord Timestamp Generator vs Manual Formatting: Which Wins?</title>
+  <meta name="description" content="Discord timestamp generator vs manual formatting compared. See the pros, cons, speed, and accuracy of each method so you can pick the right one for your server." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dctimestampgen.com/blog/discord-timestamp-generator-vs-manual.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Discord Timestamp Generator" />
+  <meta property="og:title" content="Discord Timestamp Generator vs Manual Formatting: Which Wins?" />
+  <meta property="og:description" content="A practical comparison of using a Discord timestamp generator versus formatting timestamps by hand, with pros, cons, and real examples." />
+  <meta property="og:url" content="https://dctimestampgen.com/blog/discord-timestamp-generator-vs-manual.html" />
+  <meta property="og:image" content="https://dctimestampgen.com/assets/images/generator-vs-manual.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+  <meta property="og:image:type" content="image/png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Discord Timestamp Generator vs Manual Formatting" />
+  <meta name="twitter:description" content="Generator or by hand? Compare speed, accuracy, and effort for Discord timestamps." />
+  <meta name="twitter:image" content="https://dctimestampgen.com/assets/images/generator-vs-manual.png" />
+
+  <meta name="theme-color" content="#5865f2" />
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "image": "https://dctimestampgen.com/assets/images/generator-vs-manual.png",
+    "headline": "Discord Timestamp Generator vs Manual Formatting: Which Wins?",
+    "description": "A practical comparison of using a Discord timestamp generator versus formatting timestamps by hand, covering speed, accuracy, pros, cons, and mistakes.",
+    "author": {
+      "@type": "Organization",
+      "name": "Discord Timestamp Generator",
+      "url": "https://dctimestampgen.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Discord Timestamp Generator",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dctimestampgen.com/assets/icons/favicon.svg"
+      }
+    },
+    "datePublished": "2026-07-14",
+    "dateModified": "2026-07-14",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://dctimestampgen.com/blog/discord-timestamp-generator-vs-manual.html"
+    },
+    "articleSection": "Guides",
+    "keywords": "Discord timestamp generator vs manual, Discord timestamp generator, manual Discord timestamps, Unix timestamp Discord, Discord timestamp formatting"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dctimestampgen.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dctimestampgen.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Discord Timestamp Generator vs Manual Formatting", "item": "https://dctimestampgen.com/blog/discord-timestamp-generator-vs-manual.html" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a Discord timestamp generator more accurate than doing it by hand?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In most cases, yes. A good generator reads your timezone and handles daylight saving automatically, which removes the two most common sources of manual errors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I ever need to format timestamps manually?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rarely. Manual formatting is useful if you already know the exact Unix number or you are building timestamps inside a bot or script where a tool is not handy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my manual timestamp show the wrong time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The usual cause is a timezone slip when you created the Unix number, or using milliseconds instead of seconds. A generator avoids both by calculating the value for you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a Discord timestamp generator free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most are completely free and run right in your browser. You pick a date and time, choose a format, and copy the code with no account required."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== SHARED HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="/" aria-label="Discord Timestamp Generator home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
+          </span>
+          <span>Timestamp<span style="color:var(--blurple)">Gen</span></span>
+        </a>
+        <ul class="nav__menu" id="primary-menu" data-nav-menu>
+          <li><a class="nav__link" href="/">Home</a></li>
+          <li><a class="nav__link" href="../about.html">About</a></li>
+          <li><a class="nav__link" href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a class="nav__link" href="../contact.html">Contact</a></li>
+          <li><a class="nav__link" href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a class="nav__link" href="../terms-and-conditions.html">Terms</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a class="btn btn--primary nav__cta" href="/#tool">Open the Tool</a>
+          <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation menu">
+            <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ARTICLE ===== -->
+  <main id="main">
+    <article class="section">
+      <div class="container">
+        <div class="prose">
+
+          <!-- Breadcrumb -->
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><a href="../blog.html">Blog</a></li>
+              <li aria-current="page">Generator vs Manual Formatting</li>
+            </ol>
+          </nav>
+
+          <!-- H1 -->
+          <h1>Discord Timestamp Generator vs Manual Formatting</h1>
+
+          <div class="article-meta">
+            <span>Updated July 14, 2026</span>
+            <span class="dot">&bull;</span>
+            <span>8 min read</span>
+            <span class="dot">&bull;</span>
+            <span>By the TimestampGen team</span>
+          </div>
+
+          <figure class="article-figure">
+            <img src="../assets/images/generator-vs-manual.png" width="1200" height="630" fetchpriority="high" alt="Discord timestamp generator versus manual formatting compared" />
+          </figure>
+
+          <!-- Introduction -->
+          <p>
+            There are two ways to make a Discord timestamp. You can use a generator that does the math for you, or you
+            can build the code by hand. Both end up with the same little snippet, but the path to get there feels very
+            different depending on which one you pick.
+          </p>
+          <p>
+            I have done it both ways more times than I can count. Early on I formatted everything manually because I
+            thought it made me look like I knew what I was doing. Later I switched to a generator and felt a bit foolish
+            for all the time I had wasted. Still, the manual route is not useless, and there are moments when it actually
+            makes sense.
+          </p>
+          <p>
+            So which one should you use? That is exactly what this article is about. I will lay out how each method
+            works, put them head to head in a comparison table, and give you the pros and cons in plain terms. By the
+            end you will know which approach fits your situation.
+          </p>
+          <p>
+            Quick heads up before we start. This is not one of those posts where the answer is a wishy-washy "it
+            depends." I do have a clear opinion, and I will share it. But I also want you to understand the trade-offs
+            for yourself, because the right pick changes a little based on whether you are posting in a channel or
+            writing code. Context matters, and I will point out where it tips the scales.
+          </p>
+
+          <!-- TL;DR -->
+          <div class="callout">
+            <h2>TL;DR</h2>
+            <ul>
+              <li>A generator is faster, safer, and handles timezones and daylight saving for you.</li>
+              <li>Manual formatting gives you full control but leaves more room for mistakes.</li>
+              <li>For everyday posting, the generator wins for almost everyone.</li>
+              <li>Manual still helps inside bots, scripts, or when you already know the Unix number.</li>
+            </ul>
+          </div>
+
+          <!-- TOC -->
+          <nav class="toc" aria-label="Table of contents">
+            <h2>Table of contents</h2>
+            <ol>
+              <li><a href="#how">How each method works</a></li>
+              <li><a href="#table">Side-by-side comparison</a></li>
+              <li><a href="#proscons">Pros and cons</a></li>
+              <li><a href="#examples">Real-world examples</a></li>
+              <li><a href="#mistakes">Common mistakes</a></li>
+              <li><a href="#best">Best practices</a></li>
+              <li><a href="#verdict">The verdict</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ol>
+          </nav>
+
+          <!-- How -->
+          <h2 id="how">How each method works</h2>
+          <p>
+            Both methods produce the same kind of code. It always looks like this:
+          </p>
+          <pre><code>&lt;t:1700000000:F&gt;</code></pre>
+          <p>
+            The number is a Unix timestamp, which is a count of seconds since January 1, 1970. The letter at the end sets
+            the display style. The difference between the two methods is simply how you get that number.
+          </p>
+
+          <h3>The generator method</h3>
+          <p>
+            With a generator, you pick a date and a time from simple fields, choose your format, and copy the finished
+            code. The tool figures out the Unix number, applies your timezone, and even handles daylight saving without
+            you lifting a finger. Most generators also show a live preview, so you see the result before you post. The
+            <a href="/">Discord timestamp generator tool</a> on our homepage works exactly this way, and it builds all
+            seven formats at once.
+          </p>
+
+          <h3>The manual method</h3>
+          <p>
+            Doing it by hand means finding the Unix number yourself. You either use a separate converter or work it out,
+            then you type the code around it, adding the brackets and the style letter. It gives you total control, but
+            every step is a chance to slip up, especially with timezones.
+          </p>
+          <p>
+            Here is the part people underestimate. The tricky bit is never the typing. It is the conversion. Turning
+            "8 PM my time next Friday" into the right Unix number sounds easy until daylight saving shifts the clock by
+            an hour, or you forget your own zone is not the same as your server's main audience. I have been off by an
+            hour more than once, and each time it was the manual conversion that got me, not the code itself.
+          </p>
+
+          <!-- Table -->
+          <h2 id="table">Side-by-side comparison</h2>
+          <p>
+            Here is how the two stack up on the things that matter most.
+          </p>
+
+          <div class="table-wrap">
+            <table class="formats">
+              <thead>
+                <tr>
+                  <th>Factor</th>
+                  <th>Generator</th>
+                  <th>Manual</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Speed</td><td class="example">Seconds</td><td class="example">Slower, more steps</td></tr>
+                <tr><td>Accuracy</td><td class="example">High, math is done for you</td><td class="example">Depends on you</td></tr>
+                <tr><td>Timezone handling</td><td class="example">Automatic</td><td class="example">Manual and error-prone</td></tr>
+                <tr><td>Daylight saving</td><td class="example">Handled</td><td class="example">Easy to miss</td></tr>
+                <tr><td>Live preview</td><td class="example">Usually yes</td><td class="example">No</td></tr>
+                <tr><td>Learning value</td><td class="example">Low</td><td class="example">High</td></tr>
+                <tr><td>Best for</td><td class="example">Everyday posting</td><td class="example">Bots and scripts</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pros and cons -->
+          <h2 id="proscons">Pros and cons</h2>
+
+          <h3>Generator</h3>
+          <ul>
+            <li><strong>Pro:</strong> fast, with almost no chance of a timezone error.</li>
+            <li><strong>Pro:</strong> shows a preview so you catch mistakes before posting.</li>
+            <li><strong>Pro:</strong> beginner friendly, no math required.</li>
+            <li><strong>Con:</strong> you need a browser tab open to use it.</li>
+            <li><strong>Con:</strong> you learn less about how the code works underneath.</li>
+          </ul>
+
+          <h3>Manual</h3>
+          <ul>
+            <li><strong>Pro:</strong> full control, handy inside bots and scripts.</li>
+            <li><strong>Pro:</strong> teaches you how timestamps actually work.</li>
+            <li><strong>Pro:</strong> no tool needed once you know the Unix number.</li>
+            <li><strong>Con:</strong> slower and easy to get wrong.</li>
+            <li><strong>Con:</strong> timezones and daylight saving can bite you.</li>
+          </ul>
+
+          <!-- Examples -->
+          <h2 id="examples">Real-world examples</h2>
+          <p>
+            Let me show you where each one shines with a couple of situations from my own use.
+          </p>
+
+          <h3>Posting a weekly event</h3>
+          <p>
+            Every week I post a community game night. With a generator, this takes about ten seconds. I pick the date and
+            time, grab the relative format, and paste it. If I did that by hand each week, I would be converting the same
+            kind of time over and over, and sooner or later I would fumble a timezone. The generator is the clear winner
+            here.
+          </p>
+          <pre><code>&lt;t:1700000000:R&gt;</code></pre>
+
+          <h3>Building a reminder bot</h3>
+          <p>
+            A while back I helped set up a bot that posts event reminders on its own. Inside the code, there was no tool
+            to click. The bot already had the Unix number in hand, so we formatted the timestamp manually by wrapping
+            that number in the syntax. In that case, manual was not just fine, it was the only sensible way.
+          </p>
+          <pre><code>&lt;t:1700000000:F&gt;</code></pre>
+
+          <h3>A one-off cross-timezone meetup</h3>
+          <p>
+            Last year I organized a single voice call with members spread across five countries. This was a one-time
+            thing, so you might think manual would be fine. It was not. Getting one moment to read correctly for people
+            in wildly different zones is exactly where a hand conversion goes sideways. I used a generator, picked the
+            time in my zone, and let it work out the rest. Everyone joined at the same real moment, and I did not have to
+            answer a single "wait, what time is that for me" question.
+          </p>
+
+          <!-- Mistakes -->
+          <h2 id="mistakes">Common mistakes</h2>
+          <p>
+            Most of these show up on the manual side, which tells you something. Still, a few can catch anyone.
+          </p>
+          <ul>
+            <li><strong>Milliseconds instead of seconds.</strong> A 13-digit number lands years in the future. Discord wants seconds, usually 10 digits.</li>
+            <li><strong>Wrong timezone.</strong> Build the Unix number in the wrong zone and everyone sees a shifted time.</li>
+            <li><strong>Missing bracket.</strong> Drop the closing angle bracket and the code shows as plain text.</li>
+            <li><strong>Backticks.</strong> Wrapping the code in a code block stops it from rendering.</li>
+          </ul>
+
+          <!-- Best practices -->
+          <h2 id="best">Best practices</h2>
+          <p>
+            Here is the approach that has served me well, and it lets both methods play to their strengths.
+          </p>
+          <ul>
+            <li><strong>Use a generator for anything you post live.</strong> It is faster and safer for day-to-day use.</li>
+            <li><strong>Keep the manual method for code.</strong> Inside bots and scripts, formatting by hand is the natural fit.</li>
+            <li><strong>Always preview when you can.</strong> A quick check beats fixing a wrong time later.</li>
+            <li><strong>Learn the syntax once.</strong> Even if you use a generator, knowing the format helps you spot errors fast.</li>
+          </ul>
+          <p>
+            Honestly, you do not have to pick a side for life. I use a generator for my posts and the manual method when
+            I am writing code. Best of both worlds, and neither one gets in the way of the other.
+          </p>
+
+          <!-- Verdict -->
+          <h2 id="verdict">The verdict</h2>
+          <p>
+            If you just want clean, correct timestamps for your server, a generator wins hands down. It is quicker, it
+            dodges the timezone traps, and it shows you the result before you commit. For the vast majority of people,
+            that is the smart choice.
+          </p>
+          <p>
+            Manual formatting still earns its keep, but mostly in narrow cases like bots, scripts, or when you already
+            have the Unix number ready. It also teaches you what is going on under the hood, which is worth doing once
+            even if you never format by hand again.
+          </p>
+          <p>
+            My take? Learn the syntax so you understand it, then let a generator do the heavy lifting. That mix gives you
+            both knowledge and speed, and it is the setup I would recommend to anyone running a busy community. If you
+            want to try it right now, our <a href="/">Discord time conversion tool</a> is free and needs no account.
+          </p>
+
+          <!-- FAQ -->
+          <h2 id="faq">Frequently asked questions</h2>
+
+          <h3>Is a Discord timestamp generator more accurate than doing it by hand?</h3>
+          <p>
+            Usually, yes. A good generator reads your timezone and handles daylight saving automatically, which removes
+            the two biggest sources of manual errors.
+          </p>
+
+          <h3>Do I ever need to format timestamps manually?</h3>
+          <p>
+            Rarely for normal chat. Manual formatting is useful when you already know the Unix number, or when you are
+            building timestamps inside a bot or script where a tool is not handy.
+          </p>
+
+          <h3>Why does my manual timestamp show the wrong time?</h3>
+          <p>
+            The usual causes are a timezone slip when creating the Unix number, or using milliseconds instead of seconds.
+            A generator sidesteps both by calculating the value for you.
+          </p>
+
+          <h3>Is a Discord timestamp generator free?</h3>
+          <p>
+            Most are completely free and run in your browser. You pick a date and time, choose a format, and copy the
+            code with no account needed.
+          </p>
+
+          <p style="margin-top:32px">
+            <a class="btn btn--primary" href="/">Open the Discord Timestamp Generator</a>
+          </p>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== RELATED BLOG POSTS ===== -->
+    <section class="section section--subtle" aria-labelledby="related-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Keep reading</span>
+          <h2 id="related-title">Related Blog Posts</h2>
+          <p>More guides to help you get the most out of Discord timestamps.</p>
+        </div>
+        <div class="grid grid--3">
+          <a class="card post-card" href="how-to-use-discord-timestamps.html">
+            <div class="post-card__media"><img src="../assets/images/How-to-use-Discord-timestamps.png" alt="How to use Discord timestamps guide" loading="lazy" width="1200" height="675" /></div>
+            <h3>How to Use Discord Timestamps</h3>
+            <p>The complete beginner guide, from your first code to picking the right style every time.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+          <a class="card post-card" href="discord-timestamp-formats.html">
+            <div class="post-card__media"><img src="../assets/images/discord-timestamp-formats.png" alt="Discord timestamp formats guide" loading="lazy" width="1200" height="675" /></div>
+            <h3>Discord Timestamp Formats Explained</h3>
+            <p>All seven formats broken down with examples and the best time to use each one.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+          <a class="card post-card" href="using-discord-timestamps.html">
+            <div class="post-card__media"><img src="../assets/images/using-discord-timestamp.png" alt="Using Discord timestamps walkthrough" loading="lazy" width="1200" height="675" /></div>
+            <h3>Using Discord Timestamps</h3>
+            <p>A friendly walkthrough with real examples you can copy and adapt in seconds.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="/" aria-label="Discord Timestamp Generator home">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
+            </span>
+            <span style="color:#fff">TimestampGen</span>
+          </a>
+          <p>The fast, free and private way to create dynamic Discord timestamps for your community.</p>
+        </div>
+        <nav class="footer__col" aria-label="Product">
+          <h3 class="footer__col-title">Product</h3>
+          <ul>
+            <li><a href="/#tool">Generator</a></li>
+            <li><a href="/#formats">Formats</a></li>
+            <li><a href="/#faq-title">FAQ</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__col" aria-label="Company">
+          <h3 class="footer__col-title">Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__col" aria-label="Legal">
+          <h3 class="footer__col-title">Legal</h3>
+          <ul>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span data-year>2026</span> Discord Timestamp Generator. All rights reserved.</p>
+        <p>Not affiliated with or endorsed by Discord Inc.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

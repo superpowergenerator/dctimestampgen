@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO METADATA ===== -->
+  <title>Discord Unix Timestamp Explained (A Beginner's Guide)</title>
+  <meta name="description" content="New to Discord Unix timestamps? Learn what Unix (epoch) time is, why Discord uses it, and how to convert a date to Unix time and back, in plain English." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dctimestampgen.com/blog/discord-unix-timestamp-explained.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Discord Timestamp Generator" />
+  <meta property="og:title" content="Discord Unix Timestamp Explained (A Beginner's Guide)" />
+  <meta property="og:description" content="A plain-English guide to Discord Unix timestamps: what epoch time is, why Discord uses it, and how to convert dates to Unix time and back." />
+  <meta property="og:url" content="https://dctimestampgen.com/blog/discord-unix-timestamp-explained.html" />
+  <meta property="og:image" content="https://dctimestampgen.com/assets/images/discord-unix-timestamp.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+  <meta property="og:image:type" content="image/png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Discord Unix Timestamp Explained (A Beginner's Guide)" />
+  <meta name="twitter:description" content="What a Discord Unix timestamp is, why Discord uses epoch time, and how to convert dates to Unix and back." />
+  <meta name="twitter:image" content="https://dctimestampgen.com/assets/images/discord-unix-timestamp.png" />
+
+  <meta name="theme-color" content="#5865f2" />
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "image": "https://dctimestampgen.com/assets/images/discord-unix-timestamp.png",
+    "headline": "Discord Unix Timestamp Explained (A Beginner's Guide)",
+    "description": "A beginner-friendly explanation of Discord Unix timestamps, covering what epoch time is, why Discord relies on it, and how to convert a date to Unix time and back.",
+    "author": {
+      "@type": "Organization",
+      "name": "Discord Timestamp Generator",
+      "url": "https://dctimestampgen.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Discord Timestamp Generator",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dctimestampgen.com/assets/icons/favicon.svg"
+      }
+    },
+    "datePublished": "2026-07-17",
+    "dateModified": "2026-07-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://dctimestampgen.com/blog/discord-unix-timestamp-explained.html"
+    },
+    "articleSection": "Guides",
+    "keywords": "discord unix timestamp, unix timestamp discord, epoch time discord, discord epoch converter, unix time"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dctimestampgen.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dctimestampgen.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Discord Unix Timestamp Explained", "item": "https://dctimestampgen.com/blog/discord-unix-timestamp-explained.html" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Discord Unix timestamp?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Discord Unix timestamp is a plain count of seconds since January 1, 1970 (the Unix epoch), wrapped in Discord's <t:UNIX:STYLE> syntax. Discord reads that number and displays it as a readable date or time in each viewer's own local zone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Discord use Unix time instead of a normal date?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Unix number carries no timezone. That lets Discord show the exact same instant correctly to every reader, converting it to their local time automatically, so nobody has to do timezone math."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Unix time the same as epoch time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Unix time and epoch time mean the same thing: the number of seconds elapsed since the Unix epoch, midnight UTC on January 1, 1970. Discord uses the seconds version, not milliseconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert a date to a Discord Unix timestamp?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter your date and time into the Discord Timestamp Generator. It works out the Unix value for your timezone, handles daylight saving, and gives you the ready-to-paste code in one click."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Discord use seconds or milliseconds for Unix time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Discord uses seconds. Many programming languages return milliseconds, so if your number is 13 digits long, divide by 1000 to get the 10-digit seconds value Discord expects."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== SHARED HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="/" aria-label="Discord Timestamp Generator home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
+          </span>
+          <span>Timestamp<span style="color:var(--blurple)">Gen</span></span>
+        </a>
+        <ul class="nav__menu" id="primary-menu" data-nav-menu>
+          <li><a class="nav__link" href="/">Home</a></li>
+          <li><a class="nav__link" href="../about.html">About</a></li>
+          <li><a class="nav__link" href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a class="nav__link" href="../contact.html">Contact</a></li>
+          <li><a class="nav__link" href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a class="nav__link" href="../terms-and-conditions.html">Terms</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a class="btn btn--primary nav__cta" href="/#tool">Open the Tool</a>
+          <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation menu">
+            <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ARTICLE ===== -->
+  <main id="main">
+    <article class="section">
+      <div class="container">
+        <div class="prose">
+
+          <!-- Breadcrumb -->
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><a href="../blog.html">Blog</a></li>
+              <li aria-current="page">Discord Unix Timestamp Explained</li>
+            </ol>
+          </nav>
+
+          <!-- H1 -->
+          <h1>Discord Unix Timestamp Explained</h1>
+
+          <div class="article-meta">
+            <span>Updated July 17, 2026</span>
+            <span class="dot">&bull;</span>
+            <span>9 min read</span>
+            <span class="dot">&bull;</span>
+            <span>By the TimestampGen team</span>
+          </div>
+
+          <figure class="article-figure">
+            <img src="../assets/images/discord-unix-timestamp.png" width="1200" height="630" fetchpriority="high" alt="A Discord Unix timestamp being turned into a readable local time" />
+          </figure>
+
+          <!-- Introduction -->
+          <p>
+            The first time I saw a Discord timestamp code, I honestly thought it was a typo. Someone had pasted
+            <code>&lt;t:1700000000:F&gt;</code> into a channel, and there it was on my screen as a clean, readable date. What
+            on earth was that giant number in the middle? Why ten digits? And why did the message show a different time
+            for my friend in another country than it did for me?
+          </p>
+          <p>
+            That giant number is a <strong>Discord Unix timestamp</strong>, and once it clicks, the whole system stops
+            feeling like magic and starts feeling obvious. This guide is the beginner walkthrough I wish I had that day.
+            No jargon dumps, no assuming you code for a living. Just a clear answer to what Unix time is, why Discord
+            leans on it, and how you go from a normal date to that number and back again.
+          </p>
+          <p>
+            By the end you will understand exactly what a Unix timestamp is, why it is the perfect fit for a global chat
+            app, and how to make one yourself without doing any math. Let us start with the number itself.
+          </p>
+
+          <!-- TL;DR -->
+          <div class="callout">
+            <h2>TL;DR</h2>
+            <ul>
+              <li>A Unix timestamp is just a count of seconds since <strong>January 1, 1970</strong> (the "epoch"). Unix time and epoch time are the same thing.</li>
+              <li>Discord uses it because a plain second-count has <strong>no timezone attached</strong>, so it can show the right local time to every reader.</li>
+              <li>The code looks like <code>&lt;t:1700000000:F&gt;</code>: the number is the moment, the letter is the display style.</li>
+              <li>To make one, enter a date in the <a href="/">Discord Timestamp Generator</a> and it hands you the code. No calculator needed.</li>
+              <li>Discord expects <strong>seconds</strong> (10 digits), not milliseconds (13 digits).</li>
+            </ul>
+          </div>
+
+          <!-- What is a Unix timestamp -->
+          <h2 id="what">What is a Unix Timestamp?</h2>
+          <p>
+            A Unix timestamp is a single whole number: the count of seconds that have passed since a fixed starting
+            point. That starting point is <strong>midnight UTC on January 1, 1970</strong>, and engineers call it the
+            <em>Unix epoch</em>. So when you see <code>1700000000</code>, that is simply "1.7 billion seconds after the
+            start of 1970," which lands on November 14, 2023.
+          </p>
+          <p>
+            You will hear this called a few different names, and they all point to the same idea. "Unix time," "epoch
+            time," "POSIX time," and "epoch time on Discord" are interchangeable. If someone mentions a
+            <strong>unix timestamp Discord</strong> value or asks about <strong>epoch time Discord</strong> uses, they
+            mean this exact number.
+          </p>
+          <p>
+            The beauty of it is how boring it is. There is no month, no day, no "AM," no timezone, no daylight saving
+            rule baked in. It is one clean integer that ticks up by one every second, everywhere on Earth, at the same
+            time. That simplicity is the whole point, as you will see in the next section.
+          </p>
+          <div class="callout">
+            <h3>Quick note on length</h3>
+            <p style="margin:0">
+              A Discord Unix timestamp is usually <strong>10 digits</strong> today. If your number is 13 digits, it is
+              in milliseconds (common in JavaScript and some bots). Divide by 1000 and drop the decimals to get the
+              seconds value Discord wants.
+            </p>
+          </div>
+
+          <!-- Why Discord uses Unix time -->
+          <h2 id="why">Why Discord Uses Unix Time</h2>
+          <p>
+            Here is the problem Discord had to solve. A server might have members in New York, London, and Tokyo all
+            reading the same message. If someone types "raid at 8 PM," that is useless: 8 PM in whose time? Posting a
+            list of five converted zones is clunky and people still read the wrong line.
+          </p>
+          <p>
+            A Unix timestamp fixes this cleanly because <strong>it has no timezone</strong>. The number
+            <code>1700000000</code> refers to one exact instant in the history of the universe, full stop. When Discord
+            receives that number, it converts it into the local time of whoever is looking. New York sees one time,
+            London sees another, Tokyo sees a third, and every single one of them is correct for the same moment.
+          </p>
+          <p>
+            It also means daylight saving is handled for you. The Unix number never changes, but the local display
+            adjusts to whatever DST rules apply for each reader on that date. This is why a
+            <a href="discord-timestamp-formats.html">Discord timestamp format</a> always "just works" no matter where
+            your members live. The number carries the moment; each app does the conversion.
+          </p>
+          <p>
+            So the short answer to "why Unix time" is: it is the one format that stays unambiguous across the entire
+            planet. For a chat app with global communities, nothing else comes close.
+          </p>
+
+          <!-- Example timestamp -->
+          <h2 id="example">Example Timestamp</h2>
+          <p>
+            Let us break a real one apart so the structure sticks. Take this code:
+          </p>
+          <pre><code>&lt;t:1700000000:F&gt;</code></pre>
+          <p>Every Discord timestamp has the same three moving parts:</p>
+          <div class="table-wrap">
+            <table class="formats">
+              <thead>
+                <tr>
+                  <th>Piece</th>
+                  <th>In the example</th>
+                  <th>What it does</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Wrapper</td><td><code>&lt;t: ... &gt;</code></td><td>Tells Discord "this is a timestamp, render it."</td></tr>
+                <tr><td>Unix number</td><td><code>1700000000</code></td><td>The moment itself, in seconds since 1970.</td></tr>
+                <tr><td>Style letter</td><td><code>F</code></td><td>How it displays (here, a full long date and time).</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            With the <code>F</code> style, that code renders as <span class="example">Tuesday, November 14, 2023 10:13 PM</span>
+            for a reader on US Eastern time, and as a different clock time for someone in Europe or Asia, same instant.
+            Swap the letter and only the appearance changes; the moment stays locked to that number. For a full rundown
+            of every style, our <a href="discord-timestamp-cheat-sheet.html">Discord timestamp cheat sheet</a> lists all
+            seven side by side.
+          </p>
+
+          <!-- Convert date to unix -->
+          <h2 id="date-to-unix">Convert Date to Unix Time</h2>
+          <p>
+            This is the part people worry about, and it is genuinely the easiest step. You have two routes: the fast one
+            and the manual one.
+          </p>
+          <p>
+            <strong>The fast route (recommended):</strong> open the
+            <a href="/#tool">Discord Timestamp Generator</a>, pick your date and time, and it instantly shows the Unix
+            value and every format code. It reads your local timezone, handles daylight saving, and rejects impossible
+            dates, so you never have to think about the conversion at all. Copy, paste, done.
+          </p>
+          <p>
+            <strong>The manual route (if you are curious):</strong> a Unix timestamp is the number of seconds from the
+            1970 epoch to your target moment, measured in UTC. Doing that by hand means accounting for leap years, your
+            offset from UTC, and whether daylight saving was active on that date. It is very easy to be off by an hour
+            here, which is exactly the kind of error a <strong>Discord epoch converter</strong> exists to prevent. Unless
+            you enjoy the exercise, let the tool carry it.
+          </p>
+          <div class="callout">
+            <h3>Watch the timezone</h3>
+            <p style="margin:0">
+              The single most common conversion mistake is entering a time but forgetting which zone it is in. Two
+              people converting "8 PM" from different countries get two different Unix numbers, and both are right for
+              their own clock. Always confirm the timezone field before you copy the code.
+            </p>
+          </div>
+
+          <!-- Convert unix back to date -->
+          <h2 id="unix-to-date">Convert Unix Time Back to Date</h2>
+          <p>
+            Going the other way is just as simple, and it is handy when someone hands you a raw number and you want to
+            know what date it means.
+          </p>
+          <p>
+            In the <a href="/#tool">generator</a>, there is a Unix field. Paste the number in, and the date and time
+            fields fill themselves in for your selected timezone. That is your "epoch to date" conversion with zero
+            math. You can then read the human date or grab a formatted code from it.
+          </p>
+          <p>
+            If you want a sanity check without any tool, remember the anchors: <code>1000000000</code> is September 2001,
+            <code>1500000000</code> is July 2017, and <code>1700000000</code> is November 2023. The number grows by
+            roughly 31.5 million every year. That will not give you the exact day, but it tells you instantly whether a
+            timestamp is in the right ballpark, which is often all you need to spot a bad value.
+          </p>
+
+          <!-- Common errors -->
+          <h2 id="errors">Common Errors</h2>
+          <p>
+            When a Unix timestamp misbehaves on Discord, it is almost always one of these five. Run down the list before
+            you assume anything is broken.
+          </p>
+          <ul>
+            <li><strong>Milliseconds instead of seconds.</strong> A 13-digit number shows a date thousands of years in the future. Divide by 1000 to get the 10-digit seconds value.</li>
+            <li><strong>Wrong timezone at conversion.</strong> The code renders fine but points to the wrong hour, because the source time was entered in the wrong zone. Regenerate with the correct timezone.</li>
+            <li><strong>Backticks around the code.</strong> Wrapping <code>&lt;t:1700000000:F&gt;</code> in backticks forces it to show as literal text instead of rendering. Post it as plain text.</li>
+            <li><strong>A broken wrapper.</strong> A missing <code>&lt;</code>, a lost colon, or no closing <code>&gt;</code> stops Discord from recognizing it. Copy the whole code cleanly.</li>
+            <li><strong>Decimals or letters in the number.</strong> The Unix value must be whole digits only. Strip any <code>.0</code> or stray characters.</li>
+          </ul>
+          <p>
+            If a timestamp still refuses to render after all that, our dedicated guide on
+            <a href="discord-timestamp-not-working.html">fixing a Discord timestamp that is not working</a> walks through
+            every remaining cause with screenshots. And if you are brand new to the whole system, start with
+            <a href="how-to-use-discord-timestamps.html">how to use Discord timestamps</a> for the ground-up version.
+          </p>
+
+          <!-- CTA -->
+          <div class="callout callout--tldr">
+            <h2>Skip the math entirely</h2>
+            <p>
+              You now know what a Discord Unix timestamp is and why it exists. The good news is you never actually have
+              to calculate one. The <a href="/">Discord Timestamp Generator</a> turns any date into the correct Unix
+              value and back, timezone and daylight saving included, in about ten seconds.
+            </p>
+            <p style="margin-top:16px">
+              <a class="btn btn--primary" href="/">Open the Discord Timestamp Generator</a>
+            </p>
+          </div>
+
+          <!-- FAQ -->
+          <h2 id="faq">FAQ</h2>
+
+          <h3>What is a Discord Unix timestamp?</h3>
+          <p>
+            It is a plain count of seconds since January 1, 1970 (the Unix epoch), wrapped in Discord's
+            <code>&lt;t:UNIX:STYLE&gt;</code> syntax. Discord reads that number and shows it as a readable date or time in
+            each viewer's own local zone.
+          </p>
+
+          <h3>Why does Discord use Unix time instead of a normal date?</h3>
+          <p>
+            A Unix number carries no timezone, so Discord can show the same instant correctly to everyone, converting it
+            to each reader's local time automatically. That removes all the "8 PM where?" confusion in a global server.
+          </p>
+
+          <h3>Is Unix time the same as epoch time?</h3>
+          <p>
+            Yes. Unix time and epoch time both mean the number of seconds since midnight UTC on January 1, 1970. On
+            Discord it is always the seconds version, not milliseconds.
+          </p>
+
+          <h3>How do I convert a date to a Discord Unix timestamp?</h3>
+          <p>
+            Enter your date and time into the <a href="/#tool">Discord Timestamp Generator</a>. It works out the Unix
+            value for your timezone, handles daylight saving, and gives you the ready-to-paste code in one click.
+          </p>
+
+          <h3>Does Discord use seconds or milliseconds?</h3>
+          <p>
+            Seconds. Many programming languages return milliseconds, so if your number is 13 digits long, divide by 1000
+            to get the 10-digit seconds value Discord expects.
+          </p>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== RELATED POSTS ===== -->
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Keep reading</span>
+          <h2 id="related-title">Related Blog Posts</h2>
+          <p>More guides to help you get the most out of Discord timestamps.</p>
+        </div>
+        <div class="grid grid--3">
+          <a class="card post-card" href="discord-timestamp-cheat-sheet.html">
+            <div class="post-card__media"><img src="../assets/images/discord-timestamp-cheat-sheet.png" alt="Discord timestamp cheat sheet with all formats" loading="lazy" width="1200" height="675" /></div>
+            <h3>Discord Timestamp Cheat Sheet</h3>
+            <p>Every format in one quick reference table you can bookmark and copy from.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+          <a class="card post-card" href="how-to-use-discord-timestamps.html">
+            <div class="post-card__media"><img src="../assets/images/How-to-use-Discord-timestamps.png" alt="How to use Discord timestamps guide" loading="lazy" width="1200" height="675" /></div>
+            <h3>How to Use Discord Timestamps</h3>
+            <p>The complete beginner guide, from your first code to picking the right style every time.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+          <a class="card post-card" href="discord-timestamp-not-working.html">
+            <div class="post-card__media"><img src="../assets/images/discord-timestamp-not-working.png" alt="How to fix a Discord timestamp not working" loading="lazy" width="1200" height="675" /></div>
+            <h3>Discord Timestamp Not Working?</h3>
+            <p>The common reasons timestamps break and the quick fix for each one.</p>
+            <span class="post-card__link">Read article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="/" aria-label="Discord Timestamp Generator home">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
+            </span>
+            <span style="color:#fff">TimestampGen</span>
+          </a>
+          <p>The fast, free and private way to create dynamic Discord timestamps for your community.</p>
+        </div>
+        <nav class="footer__col" aria-label="Product">
+          <h3 class="footer__col-title">Product</h3>
+          <ul>
+            <li><a href="/#tool">Generator</a></li>
+            <li><a href="/#formats">Formats</a></li>
+            <li><a href="/#faq-title">FAQ</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__col" aria-label="Company">
+          <h3 class="footer__col-title">Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__col" aria-label="Legal">
+          <h3 class="footer__col-title">Legal</h3>
+          <ul>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span data-year>2026</span> Discord Timestamp Generator. All rights reserved.</p>
+        <p>Not affiliated with or endorsed by Discord Inc.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -71,162 +71,152 @@
   gtag('config', 'G-DQJPMVJJCT');
 
 </script>
-  <!-- Schema.org: Organization + WebSite + WebApplication + BreadcrumbList + FAQ -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://dctimestampgen.com/#organization",
-        "name": "Discord Timestamp Generator",
-        "url": "https://dctimestampgen.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://dctimestampgen.com/assets/images/discord-timestamp-generator.png",
-          "width": 1200,
-          "height": 675
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://dctimestampgen.com/#website",
-        "name": "Discord Timestamp Generator",
-        "url": "https://dctimestampgen.com/",
-        "description": "Free tool to create dynamic, timezone-aware Discord timestamps from any date and time.",
-        "publisher": { "@id": "https://dctimestampgen.com/#organization" },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "WebApplication",
-        "name": "Discord Timestamp Generator",
-        "url": "https://dctimestampgen.com/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any (Web Browser)",
-        "browserRequirements": "Requires JavaScript",
-        "description": "A free online tool that generates dynamic Discord timestamps from any date, time and format.",
-        "isPartOf": { "@id": "https://dctimestampgen.com/#website" },
-        "publisher": { "@id": "https://dctimestampgen.com/#organization" },
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dctimestampgen.com/" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How to create a timestamp in Discord?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Pick a date and time in the Discord Timestamp Generator, then copy the code it makes. Paste that code into any message and Discord turns it into a readable time when you send it. There is nothing to install and no account needed."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to add a timestamp in a Discord message?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Paste the generated code, such as <t:1734567890:R>, straight into the message box like normal text. When you hit send, Discord swaps it for a formatted date. It works in channels, threads, embeds, and direct messages."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to display local time in Discord?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You do not have to do anything special. A Discord timestamp always shows in each reader's own local time. You pick the moment once, and Discord handles the conversion for every person who sees the message."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to convert time in Discord?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Use the Discord time converter. Enter your date and time, and it works out the Unix number behind the scenes. That number is what lets Discord show the same instant correctly in every timezone."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What time format does Discord use?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Discord uses the syntax <t:UNIX:STYLE>, where the Unix value is seconds since January 1, 1970 and the style is one letter. The seven styles are t, T, d, D, f, F, and R."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to display \"X minutes ago\" in Discord?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Use the relative style by ending the code with R, like <t:1734567890:R>. Discord shows phrases like 'in 5 minutes' or '10 minutes ago' and keeps them updating on their own."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to write discord timestamp?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Write an opening <t:, then the Unix number in seconds, then a colon and a style letter, then a closing >. So a full code looks like <t:1734567890:F>. The tool builds this for you if you would rather not type it."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the date format for Discord?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For dates you can use d for a short numeric date like 12/18/2024, or D for a written date like December 18, 2024. Discord shows the order in each reader's regional style, so you never have to guess day-first or month-first."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the format of a timestamp?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A timestamp is built from a Unix value, which is a plain count of seconds since January 1, 1970. On Discord that value gets wrapped in the <t:UNIX:STYLE> syntax so it can be shown as a date, a time, or a countdown."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to write local time in Discord?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Enter your local time in the generator and copy the code. You do not write out the timezone at all. Discord reads the Unix value and shows your chosen moment in each viewer's own local time automatically."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to do time conversion on Discord?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The conversion happens for you. You give the tool one date and time, it turns that into a Unix number, and Discord converts that number into the correct local time for every reader when the message loads."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to make a Discord timestamp?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Open the generator, choose your date, time, and a format, then copy the finished code and paste it into Discord. The whole thing takes about ten seconds and needs no coding."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can you change the time on Discord?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You cannot change another person's clock, and you do not need to. To point a timestamp at a new moment, edit the message and change the Unix number in the code. Discord updates the displayed time right away for everyone."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dctimestampgen.com/#organization",
+      "name": "TimestampGen",
+      "url": "https://dctimestampgen.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dctimestampgen.com/assets/images/discord-timestamp-generator.png",
+        "width": 1200,
+        "height": 675
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dctimestampgen.com/#website",
+      "name": "Discord Timestamp Generator | Free Discord Time Converter",
+      "url": "https://dctimestampgen.com/",
+      "description": "Free Discord Timestamp Generator. Create Discord timestamps from any date and time, choose a format, and copy the code instantly. No sign-up required.",
+      "publisher": {
+        "@id": "https://dctimestampgen.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://dctimestampgen.com/#webpage",
+      "name": "Discord Timestamp Generator | Free Discord Time Converter",
+      "url": "https://dctimestampgen.com/",
+      "description": "Free Discord Timestamp Generator. Create Discord timestamps from any date and time, choose a format, and copy the code instantly. No sign-up required.",
+      "isPartOf": {
+        "@id": "https://dctimestampgen.com/#website"
+      },
+      "about": {
+        "@id": "https://dctimestampgen.com/#webapplication"
+      },
+      "publisher": {
+        "@id": "https://dctimestampgen.com/#organization"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://dctimestampgen.com/#webapplication",
+      "name": "Discord Timestamp Generator | Free Discord Time Converter",
+      "url": "https://dctimestampgen.com/",
+      "description": "Free Discord Timestamp Generator. Create Discord timestamps from any date and time, choose a format, and copy the code instantly. No sign-up required.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "isPartOf": {
+        "@id": "https://dctimestampgen.com/#website"
+      },
+      "publisher": {
+        "@id": "https://dctimestampgen.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dctimestampgen.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Is a Discord Timestamp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Discord timestamp is a dynamic date and time format that Discord converts into each user's local time. It uses a Unix timestamp inside Discord's timestamp syntax, making scheduled times easier to understand for users in different time zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Do I Create a Discord Timestamp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose a date and time in the Discord Timestamp Generator, select the display format you want, and copy the generated Discord timestamp code. You can then paste the code into a Discord message."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Is the Discord Timestamp Format?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard Discord timestamp format is <t:UNIX_TIMESTAMP:STYLE>. Replace UNIX_TIMESTAMP with the Unix time value and STYLE with a supported Discord timestamp format such as t, T, d, D, f, F, or R."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Do I Get a Unix Timestamp for Discord?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can use the Discord Timestamp Generator to convert a date and time into the Unix timestamp required by Discord. The generator also creates the complete Discord timestamp code for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Discord Timestamps Adjust for Time Zones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Discord timestamps are displayed according to each user's local time zone, so the same timestamp can show different local times to users in different parts of the world."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Does R Mean in a Discord Timestamp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The R format displays a Discord timestamp as relative time, such as in a few minutes, 2 hours ago, or in 3 days. It's useful for countdowns, reminders, and time-sensitive events."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I Create a Discord Timestamp Without a Bot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Discord timestamps don't require a bot. You can generate the timestamp code and paste it directly into a Discord message."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I Use Discord Timestamps on Mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Discord timestamps can be used in messages sent from supported mobile versions of Discord. Generate the timestamp code and paste it into your message."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why Isn't My Discord Timestamp Working?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check that you're using the correct Discord timestamp syntax, a valid Unix timestamp in seconds, and a supported format code. A Unix timestamp in milliseconds can cause the timestamp to display incorrectly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I Create a Discord Timestamp Manually?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can manually create a Discord timestamp by converting your date and time to a Unix timestamp in seconds and placing it inside Discord's timestamp syntax. A generator makes the process faster and reduces formatting errors."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>

@@ -429,7 +429,8 @@
           </figure>
 
               <p>
-        A Discord timestamp is a special piece of text that Discord turns into a readable date or time when you send it in a message. Instead of typing a fixed time such as “8:00 PM,” you can use a dynamic timestamp that tells Discord exactly which moment you mean. The displayed result can then be formatted as a time, date, full date and time, or relative time such as “in 2 hours.”
+        A Discord timestamp is a special piece of text that Discord turns into a readable date or time when you send it in a message.</p>
+          <p>Instead of typing a fixed time such as “8:00 PM,” you can use a dynamic timestamp that tells Discord exactly which moment you mean. The displayed result can then be formatted as a time, date, full date and time, or relative time such as “in 2 hours.”
       </p>
 
       <p>
@@ -437,7 +438,8 @@
       </p>
 
       <p>
-        This is especially useful for global Discord communities. A member in New York, another in London, and someone in Tokyo don't have to calculate the event time themselves. Discord can display the same moment according to each person's local time settings, reducing timezone confusion around events, meetings, deadlines, and announcements.
+    <strong>Discord has seven different timestamp styles<strong>. This is especially useful for global Discord communities.</p>
+      <p>A member in New York, another in London, and someone in Tokyo don't have to calculate the event time themselves. Discord can display the same moment according to each person's local time settings, reducing timezone confusion around events, meetings, deadlines, and announcements.
       </p>
 
       <p>
@@ -694,49 +696,184 @@
         </div>
       </div>
     </section>
+<!-- ============================ DISCORD TIMESTAMP EXAMPLES ============================ -->
+<section class="section" aria-labelledby="examples-title">
+  <div class="container">
 
-    <!-- ============================ HOW TO USE DISCORD TIMESTAMPS (STEPS) ============================ -->
-    <section class="section" aria-labelledby="steps-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Step by step</span>
-          <h2 id="steps-title">How to Use Discord Timestamps</h2>
-          <p>Four small steps take you from a date in your head to a clean time that reads right for your whole server.</p>
+    <div class="section__header">
+      <span class="eyebrow">Examples</span>
+      <h2 id="examples-title">Discord Timestamp Examples</h2>
+      <p>
+        See how Discord timestamps can be used for events, countdowns, meetings,
+        and deadlines. Copy the timestamp code and paste it directly into Discord.
+      </p>
+    </div>
+
+    <div class="grid grid--2 examples-grid">
+
+      <!-- Event Example -->
+      <article class="card example-card">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
         </div>
 
-        <div class="grid grid--2 steps-grid">
-          <article class="card step-card">
-            <span class="step-card__num" aria-hidden="true">1</span>
-            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
-            <h3>Step 1: Generate a Timestamp</h3>
-            <p>Pick your date and time in the tool near the top of this page. It reads your local timezone on its own and sorts out daylight saving, so you do not have to think about the math.</p>
-          </article>
-          <article class="card step-card">
-            <span class="step-card__num" aria-hidden="true">2</span>
-            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></div>
-            <h3>Step 2: Copy the Timestamp Code</h3>
-            <p>Click copy next to any format and the code lands on your clipboard. You can grab a single style or copy all seven at once if you want to keep your options open.</p>
-          </article>
-          <article class="card step-card">
-            <span class="step-card__num" aria-hidden="true">3</span>
-            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7"></path><path d="M4 10V3"></path><path d="M12 21v-9"></path><path d="M12 8V3"></path><path d="M20 21v-5"></path><path d="M20 12V3"></path><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></div>
-            <h3>Step 3: Choose a Display Format (Optional)</h3>
-            <p>Want a countdown instead of a plain date? Swap the last letter of the code, or just copy the relative style. This step is optional since the default format already looks great.</p>
-          </article>
-          <article class="card step-card">
-            <span class="step-card__num" aria-hidden="true">4</span>
-            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></div>
-            <h3>Step 4: Paste into Discord</h3>
-            <p>Drop the code into any message, embed, or event description and hit send. Discord swaps it for a live local time the moment the message posts. No bot, no plugin, nothing extra.</p>
-          </article>
+        <h3>Event Timestamp Example</h3>
+
+        <p>
+          Use a full date and time when you want to tell your Discord community
+          exactly when an event starts.
+        </p>
+
+        <div class="example-card__code">
+          <code>&lt;t:1780000000:F&gt;</code>
         </div>
 
-        <p class="text-center" style="margin-top:32px">
-          <a class="btn btn--primary btn--lg" href="#tool">Open the Discord timestamp tool</a>
+        <p class="example-card__message">
+          <strong>Example message:</strong><br />
+          Community game night starts <code>&lt;t:1780000000:F&gt;</code>.
+        </p>
+
+        <p class="example-card__result">
+          Discord displays the timestamp as a readable date and time for each user.
+        </p>
+      </article>
+
+
+      <!-- Countdown Example -->
+      <article class="card example-card">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <polyline points="12 7 12 12 15 14"></polyline>
+          </svg>
+        </div>
+
+        <h3>Countdown Timestamp Example</h3>
+
+        <p>
+          Use the relative <code>R</code> format when you want Discord to show
+          a changing countdown such as “in 2 hours” or “3 days ago.”
+        </p>
+
+        <div class="example-card__code">
+          <code>&lt;t:1780000000:R&gt;</code>
+        </div>
+
+        <p class="example-card__message">
+          <strong>Example message:</strong><br />
+          The tournament begins <code>&lt;t:1780000000:R&gt;</code>.
+        </p>
+
+        <p class="example-card__result">
+          Discord displays a relative time that updates as the target moment gets closer.
+        </p>
+      </article>
+
+
+      <!-- Meeting Example -->
+      <article class="card example-card">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+
+        <h3>Meeting Timestamp Example</h3>
+
+        <p>
+          Add a timestamp to meeting announcements so members can see the
+          scheduled time in a format that works for them.
+        </p>
+
+        <div class="example-card__code">
+          <code>&lt;t:1780000000:f&gt;</code>
+        </div>
+
+        <p class="example-card__message">
+          <strong>Example message:</strong><br />
+          Staff meeting: <code>&lt;t:1780000000:f&gt;</code>
+        </p>
+
+        <p class="example-card__result">
+          Members can view the same meeting time without manually converting the timezone.
+        </p>
+      </article>
+
+
+      <!-- Deadline Example -->
+      <article class="card example-card">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2h12"></path>
+            <path d="M6 22h12"></path>
+            <path d="M6 2c0 5 6 5 6 10s-6 5-6 10"></path>
+            <path d="M18 2c0 5-6 5-6 10s6 5 6 10"></path>
+          </svg>
+        </div>
+
+        <h3>Deadline Timestamp Example</h3>
+
+        <p>
+          Use a timestamp for submission deadlines, registration cutoffs,
+          applications, or other time-sensitive tasks.
+        </p>
+
+        <div class="example-card__code">
+          <code>&lt;t:1780000000:D&gt;</code>
+        </div>
+
+        <p class="example-card__message">
+          <strong>Example message:</strong><br />
+          Applications close on <code>&lt;t:1780000000:D&gt;</code>.
+        </p>
+
+        <p class="example-card__result">
+          The deadline is represented by a specific moment instead of a fixed timezone label.
+        </p>
+      </article>
+
+    </div>
+
+
+    <!-- Example Explanation -->
+    <div class="panel examples-explainer">
+      <div class="examples-explainer__content">
+        <span class="eyebrow">How It Works</span>
+        <h3>One Timestamp, Different Local Times</h3>
+
+        <p>
+          A Discord timestamp represents one specific moment. Discord can then
+          display that moment according to the viewer's local time settings.
+          You don't need to create a separate timestamp for every timezone.
+        </p>
+
+        <div class="example-card__code">
+          <code>&lt;t:1780000000:F&gt;</code>
+        </div>
+
+        <p>
+          The number identifies the moment, while the final letter controls how
+          Discord displays it. For example, <code>F</code> produces a long
+          date and time, while <code>R</code> produces a relative time.
         </p>
       </div>
-    </section>
+    </div>
 
+  </div>
+</section>
+   
     <!-- ============================ KEY USE CASES ============================ -->
     <section class="section section--subtle" aria-labelledby="usecases-title">
       <div class="container">

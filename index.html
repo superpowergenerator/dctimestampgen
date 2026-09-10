@@ -1030,88 +1030,172 @@
   </div>
 </section>
 
+```html id="q7m2px"
 <!-- ============================ GENERATOR VS MANUAL ============================ -->
 <section class="section" aria-labelledby="generator-vs-manual-title">
   <div class="container">
-    <div class="prose">
 
-      <span class="eyebrow">Compare Your Options</span>
-      <h2 id="generator-vs-manual-title">Discord Timestamp Generator vs. Manual Creation</h2>
+    <div class="section-head">
+      <span class="eyebrow">Generator vs. Manual</span>
+
+      <h2 id="generator-vs-manual-title">
+        Discord Timestamp Generator vs. Manual Creation
+      </h2>
 
       <p>
-        You can create a Discord timestamp with a generator or build the syntax
-        yourself. Both methods produce a timestamp, but they suit different
-        situations.
+        You can create a Discord timestamp with a generator or build the
+        timestamp manually using Unix time and Discord's timestamp syntax.
+        Here's how the two methods compare.
+      </p>
+    </div>
+
+    <div style="width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:24px;">
+      <table style="width:100%; min-width:680px; border-collapse:collapse; font-size:15px; line-height:1.6; text-align:left; background:transparent;">
+
+        <thead>
+          <tr>
+            <th scope="col"
+                style="padding:14px 16px; border-bottom:2px solid #d9d9d9; font-weight:700;">
+              Feature
+            </th>
+
+            <th scope="col"
+                style="padding:14px 16px; border-bottom:2px solid #d9d9d9; font-weight:700;">
+              Discord Timestamp Generator
+            </th>
+
+            <th scope="col"
+                style="padding:14px 16px; border-bottom:2px solid #d9d9d9; font-weight:700;">
+              Manual Creation
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <th scope="row"
+                style="padding:14px 16px; border-bottom:1px solid #e5e5e5; font-weight:600;">
+              Ease of use
+            </th>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              Enter the date and time, then generate the code.
+            </td>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              Requires you to find or calculate the correct Unix timestamp.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row"
+                style="padding:14px 16px; border-bottom:1px solid #e5e5e5; font-weight:600;">
+              Timezone handling
+            </th>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              The generator can use your selected date, time, and timezone to create the timestamp.
+            </td>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              You need to make sure the Unix timestamp represents the intended moment.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row"
+                style="padding:14px 16px; border-bottom:1px solid #e5e5e5; font-weight:600;">
+              Timestamp formats
+            </th>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              Quickly generate different Discord timestamp formats.
+            </td>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              You need to change the format letter manually.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row"
+                style="padding:14px 16px; border-bottom:1px solid #e5e5e5; font-weight:600;">
+              Discord timestamp syntax
+            </th>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              The generator creates the correct
+              <code>&lt;t:UNIX_TIMESTAMP:FORMAT&gt;</code> structure.
+            </td>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              You must enter the Unix timestamp and format letter yourself.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row"
+                style="padding:14px 16px; border-bottom:1px solid #e5e5e5; font-weight:600;">
+              Copy and paste
+            </th>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              Copy the generated code and paste it into Discord.
+            </td>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              Copy or type the completed timestamp syntax manually.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row"
+                style="padding:14px 16px; border-bottom:1px solid #e5e5e5; font-weight:600;">
+              Best for
+            </th>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              Beginners, events, announcements, meetings, deadlines, and quick timestamp creation.
+            </td>
+
+            <td style="padding:14px 16px; border-bottom:1px solid #e5e5e5;">
+              Users who already know Unix timestamps or are working with code.
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="margin-top:32px;">
+
+      <h3>When to Use the Discord Timestamp Generator</h3>
+
+      <p>
+        Use the <strong>Discord Timestamp Generator</strong> when you want
+        to create a timestamp quickly without calculating Unix time yourself.
+        It's especially useful when you're creating timestamps for multiple
+        dates or want to test different display formats before posting them
+        in Discord.
       </p>
 
-      <div class="table-wrap">
-        <table>
-          <caption>Discord timestamp generator vs. manual creation</caption>
-          <thead>
-            <tr>
-              <th scope="col">Feature</th>
-              <th scope="col">Generator</th>
-              <th scope="col">Manual Creation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Easy for beginners</th>
-              <td>Yes</td>
-              <td>Requires syntax knowledge</td>
-            </tr>
-            <tr>
-              <th scope="row">Timezone conversion</th>
-              <td>Handled during conversion</td>
-              <td>Requires you to provide the correct Unix value</td>
-            </tr>
-            <tr>
-              <th scope="row">Multiple formats</th>
-              <td>Generate all formats quickly</td>
-              <td>Change the format code manually</td>
-            </tr>
-            <tr>
-              <th scope="row">Copy and paste</th>
-              <td>Ready to copy</td>
-              <td>Usually typed or assembled manually</td>
-            </tr>
-            <tr>
-              <th scope="row">Best for</th>
-              <td>Quick timestamp creation</td>
-              <td>Developers and advanced users</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>When to Use the Generator</h3>
+      <h3>When to Create a Discord Timestamp Manually</h3>
 
       <p>
-        A <strong>Discord Timestamp Generator</strong> is the easier option when
-        you already know the date and time but don't want to calculate the Unix
-        timestamp or remember the different format codes. It's especially useful
-        when you need several timestamp formats for the same moment.
-      </p>
-
-      <h3>When to Create a Timestamp Manually</h3>
-
-      <p>
-        Manual creation can be useful if you're comfortable working with Unix
-        timestamps and Discord's timestamp syntax. Developers may also prefer
-        manual syntax when generating timestamps programmatically or incorporating
-        them directly into code.
-      </p>
-
-      <p>
-        For most everyday announcements, events, meetings, and deadlines, a
-        generator provides a faster way to create a ready-to-use timestamp.
-        Manual creation is better suited to users who already understand the
-        underlying syntax.
+        Manual creation is useful when you already have a Unix timestamp and
+        know the Discord timestamp format. For example, developers working
+        with bots, scripts, or other automated systems may already have the
+        timestamp value and only need to place it into the correct syntax.
       </p>
 
     </div>
+
   </div>
 </section>
+<!-- ============================ END GENERATOR VS MANUAL ============================ -->
+```
+
       
     <!-- ============================ WHY CHOOSE ============================ -->
     <section class="section" aria-labelledby="why-title">
